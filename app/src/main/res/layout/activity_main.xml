@@ -3,33 +3,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingBottom="0dp"
-    android:paddingLeft="0dp"
-    android:paddingRight="0dp"
-    android:paddingTop="0dp"
+
     tools:context="me.souravbadami.mycleanindiaapp.MainActivity">
 
     <fragment
+        android:translationZ="0dp"
         android:id="@+id/map"
-        android:name="me.souravbadami.mycleanindiaapp.MapFragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true" />
+        tools:context=".MainActivity" />
 
-    <com.arlib.floatingsearchview.FloatingSearchView
-        android:id="@+id/floating_search_view"
+    <RelativeLayout
+        android:background="@drawable/border"
+        android:translationZ="1dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:floatingSearch_searchBarMarginLeft="9dp"
-        app:floatingSearch_searchBarMarginTop="2dp"
-        app:floatingSearch_searchBarMarginRight="9dp"
-        app:floatingSearch_searchHint="Search for a place..."
-        app:floatingSearch_suggestionsListAnimDuration="250"
-        app:floatingSearch_showSearchKey="false"
-        app:floatingSearch_leftActionMode="noLeftAction"
-        app:floatingSearch_close_search_on_keyboard_dismiss="true" />
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal">
+
+        <fragment
+            android:layout_gravity="center"
+            android:id="@+id/place_autocomplete_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+            />
+
+    </RelativeLayout>
+
 
 </RelativeLayout>
